@@ -12,12 +12,7 @@ import Services from './components/Services/Services';
 function App() {
   return (
     <div>
-      <Header></Header>
-      <Banner></Banner>
-      <Services></Services>
-      <Client></Client>
-      <Newsletter></Newsletter>
-      <Footer></Footer>
+
       <RouterProvider router={router}></RouterProvider>
     </div>
   );

@@ -3,9 +3,29 @@ import { useLoaderData } from 'react-router-dom';
 
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData();
+
+    const handleSubmit = event =>{
+        event.preventDefault();
+        const form = event.target;
+        const review = form.review.value;
+
+        console.log("afdhs");
+
+        fetch('http://localhost:5000/review',{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify({review})
+        })
+        .then(res =>res.jason())
+        .then(data => console.log(data))
+        
+      }
     return (
         <div>
 <div className="bg-white">
+    
   <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
       <div>
@@ -28,19 +48,82 @@ const ServiceDetails = () => {
 
           <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
             <button type="button" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none sm:flex-none px-3 py-2 leading-6 rounded border-gray-300 bg-white text-gray-800 shadow-sm hover:text-gray-800 hover:bg-gray-100 hover:border-gray-300 hover:shadow focus:ring focus:ring-gray-500 focus:ring-opacity-25 active:bg-white active:border-white active:shadow-none">
-              <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" className="opacity-50 hi-solid hi-heart inline-block w-5 h-5"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
               <span>Favorite</span>
             </button>
             <button type="button" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none sm:grow px-3 py-2 leading-6 rounded border-gray-300 bg-white text-gray-800 shadow-sm hover:text-gray-800 hover:bg-gray-100 hover:border-gray-300 hover:shadow focus:ring focus:ring-gray-500 focus:ring-opacity-25 active:bg-white active:border-white active:shadow-none">
-              <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" className="opacity-50 hi-solid hi-shopping-bag inline-block w-5 h-5"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
               <span>Add to Cart</span>
             </button>
           </div>
+
         </div>
+
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+<div className="bg-gray-100">
+  <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
+    <div className="max-w-3xl mx-auto space-y-4 lg:space-y-8">
+   
+      <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
+        <div className="p-5 lg:p-6 grow w-full flex space-x-4">
+          <img src="https://source.unsplash.com/iFgRcqHznqg/128x128" alt="User Avatar" className="flex-none inline-block w-10 h-10 sm:w-16 sm:h-16 rounded-full" />
+          <div className="grow">
+            <div className="text-sm sm:text-base leading-relaxed mb-1">
+              <a href="/" className="font-semibold text-indigo-600 hover:text-indigo-400">Jose Wagner</a>
+            </div>
+            {/* <form onSubmit={handleSubmit} className="space-y-6">
+              <textarea name="review" className="block border border-gray-200 rounded placeholder-gray-400 px-3 py-2 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" id="tk-comment" rows="4" placeholder="Join the conversation.."></textarea>
+              <button type="button" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-3 py-2 leading-6 rounded border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
+                <span>Post Comment</span>
+              </button>
+            </form> */}
+
+            <form onSubmit={handleSubmit}>
+                <textarea name='review' rows="5" cols="5"></textarea>
+                <button type="submit">submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+   
+      <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
+        <div className="p-5 lg:p-6 grow w-full flex space-x-4">
+          <img src="https://source.unsplash.com/mEZ3PoFGs_k/128x128" alt="User Avatar" className="flex-none inline-block w-10 h-10 sm:w-16 sm:h-16 rounded-full" />
+          <div className="grow">
+            <p className="text-sm sm:text-base leading-relaxed mb-1">
+              <a href="/" className="font-semibold text-indigo-600 hover:text-indigo-400">Lori Grant</a>
+              I just started a new Tailwind CSS based project and I find it very refreshing. Could you suggest any tools to help me out?
+            </p>
+
+ 
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     );
 };

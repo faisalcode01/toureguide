@@ -21,7 +21,7 @@ const Newsletter = () => {
             <div className="flex items-center">
               <input className="block border placeholder-gray-400 z-1 px-5 py-3 leading-6 w-full rounded-l active:z-1 focus:z-1 -mr-px border-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" type="text" placeholder="Your email" />
               <button type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none flex-none px-4 py-3 leading-6 rounded-r active:z-1 focus:z-1 border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
-                <svg stroke="currentColor" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="sm:hidden hi-outline hi-plus inline-block w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                <svg stroke="currentColor" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="sm:hidden hi-outline hi-plus inline-block w-6 h-6"><path strokeLinejoin="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 <span className="hidden sm:inline">Subscribe</span>
               </button>
             </div>

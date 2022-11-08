@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
 const [services,setServices] = useState([]);
   useEffect(
     () =>{
-    fetch('http://localhost:5000/services')
+    fetch('http://localhost:5000/home_services')
     .then(res =>res.json())
     .then(data =>setServices(data))
   }
@@ -31,6 +32,13 @@ const [services,setServices] = useState([]);
     }
 
 
+    </div>
+    <div className="text-center">
+      
+      <Link to="/services" type="button" class="inline-flex justify-center items-center space-x-2 rounded border font-semibold focus:outline-none px-6 py-4 leading-6 border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
+        <span>All Servises</span>
+        <svg class="hi-solid hi-arrow-right inline-block w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </Link>
     </div>
   </div>
 </div>

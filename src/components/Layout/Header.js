@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Header = () => {
+
+  const {user,providerLogout} = useContext(AuthContext);
+  const handleLogout = () =>{
+    providerLogout()
+    .then((result) => {
+      console.log(result)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
     return (
         <header id="page-header" className="flex flex-none items-center py-10 bg-gray-800">
     <div className="flex flex-col text-center sm:flex-row sm:items-center sm:justify-between space-y-6 sm:space-y-0 container xl:max-w-7xl mx-auto px-4 lg:px-10">
@@ -11,15 +24,33 @@ const Header = () => {
         </a>
       </div>
       <nav className="space-x-4 sm:space-x-6">
-        <a href="/" className="font-semibold text-gray-300 hover:text-gray-400">
+        {/* <a href="/" className="font-semibold text-gray-300 hover:text-gray-400">
           <span>Features</span>
-        </a>
-        <a href="/" className="font-semibold text-gray-300 hover:text-gray-400">
-          <span>Pricing</span>
-        </a>
-        <a href="/" className="font-semibold text-gray-300 hover:text-gray-400">
-          <span>Support</span>
-        </a>
+        </a> */}
+        {
+                user?.uid?
+                <>
+                <a data-toggle="tooltip" className='font-semibold text-gray-300 hover:text-gray-400' data-placement="top" title={user?.displayName}>
+                
+                {/* <img mx-auto roundedCircle style={{height:'30px'}}  src={user?.photoURL} alt="profile photo"/> */}
+                {user?.displayName}
+              </a>
+              <Link className='font-semibold text-gray-300 hover:text-gray-400' to={`/review/${user.email}`}>My Reviews</Link>
+              <Link className='font-semibold text-gray-300 hover:text-gray-400' to="/add_service">Add Service</Link>
+
+                <a  onClick={handleLogout} className='font-semibold text-gray-300 hover:text-gray-400'>LogOut</a>
+                </>                
+                :
+
+                <>
+                  <Link className='font-semibold text-gray-300 hover:text-gray-400' to="/login">Login</Link>
+                  <Link className='font-semibold text-gray-300 hover:text-gray-400' to="/register">Register</Link>
+                </>
+
+              
+
+                
+              }
       </nav>
     </div>
   </header>

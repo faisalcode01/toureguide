@@ -15,7 +15,7 @@ const Login = () => {
   const {user,providerLogin,providerLoginUser} = useContext(AuthContext);
   const [ferror, setError] = useState(null);
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.pathname || '/';
   const googleProvider = new GoogleAuthProvider(); 
 
   const githubLogin = new GithubAuthProvider();

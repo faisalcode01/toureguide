@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import {  useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import Comment from './Comment';
 
@@ -7,6 +7,8 @@ const ServiceDetails = () => {
     const serviceDetails = useLoaderData();
     const [comment,setComment] = useState([]);
     const {user} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const url= "http://localhost:5000/review/" + serviceDetails._id;
 
 
@@ -20,14 +22,20 @@ const ServiceDetails = () => {
 
     const handleSubmit = event =>{
         event.preventDefault();
+        if (!user) {
+          navigate('/login',{state:location})
+          // return <Navigate to="/login" state={{from:location}} replace></Navigate> 
+      }
         const form = event.target;
         const review = form.review.value;
         const data = {
           'review': review,
           'service_id':serviceDetails._id,
+          'email':user.email,
           'name':user.displayName,
           'photo':user.photoURL,
         };
+
 
         fetch('http://localhost:5000/review',{
             method: 'POST',
@@ -40,6 +48,9 @@ const ServiceDetails = () => {
         .then(data => {
           
         });
+
+        const newComments = [data,...comment];
+        setComment(newComments);
 
         form.reset();
         
@@ -95,17 +106,22 @@ const ServiceDetails = () => {
    
       <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
         <div className="p-5 lg:p-6 grow w-full flex space-x-4">
-          <img src={user.photoURL} alt="User Avatar" className="flex-none inline-block w-10 h-10 sm:w-16 sm:h-16 rounded-full" />
+          <img src={user?.photoURL} alt="User Avatar" className="flex-none inline-block w-10 h-10 sm:w-16 sm:h-16 rounded-full" />
           <div className="grow">
             <div className="text-sm sm:text-base leading-relaxed mb-1">
-              <a href="/" className="font-semibold text-indigo-600 hover:text-indigo-400">{user.displayName}</a>
+              <a href="/" className="font-semibold text-indigo-600 hover:text-indigo-400">{user?.displayName}</a>
             </div>
+           
             <form onSubmit={handleSubmit} className="space-y-6">
               <textarea name="review" className="block border border-gray-200 rounded placeholder-gray-400 px-3 py-2 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" id="tk-comment" rows="4" placeholder="Join the conversation.."></textarea>
               <button type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-3 py-2 leading-6 rounded border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
                 <span>Post Comment</span>
               </button>
             </form>
+
+
+            
+
 
             {/* <form onSubmit={handleSubmit}>
                 <textarea name='review' className="block border border-gray-200 rounded placeholder-gray-400 px-3 py-2 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" id="tk-comment" rows="4" placeholder="Join the conversation.."></textarea>

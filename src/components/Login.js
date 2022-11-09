@@ -154,10 +154,10 @@ const handleLoginSubmit = event =>{
               </form>   
 
                       <div class="inline-flex justify-around   font-semibold focus:outline-none w-full px-2 py-2  rounded  text-white ">
-      <button type="button" class="inline-flex justify-center items-center space-x-3 border font-semibold focus:outline-none px-2 py-1 leading-5 text-sm rounded active:z-1 focus:z-1 -mr-px border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
+      <button onClick={handleGooleLogin} type="button" class="inline-flex justify-center items-center space-x-3 border font-semibold focus:outline-none px-2 py-1 leading-5 text-sm rounded active:z-1 focus:z-1 -mr-px border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
       <FaGoogle></FaGoogle> Login with Google
       </button>
-      <button type="button" class="inline-flex justify-center items-center space-x-3 border font-semibold focus:outline-none px-2 py-1 leading-5 text-sm rounded active:z-1 focus:z-1 border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
+      <button onClick={handleGithubLogin} type="button" class="inline-flex justify-center items-center space-x-3 border font-semibold focus:outline-none px-2 py-1 leading-5 text-sm rounded active:z-1 focus:z-1 border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
       <FaGithub></FaGithub> Login with Github
       </button>
     </div>       

@@ -1,3 +1,31 @@
+# Name
+
+CODELAB-01
+
+# Live Site
+
+http://codelab.faisalaakon.com/
+
+# Feature
+
+1.Home page showing all learning categories.
+2.Courses page has left side nav bar to toggole between categories.
+3.Courses page right side section is for course card depends on category.
+4.art category has no course card
+5."/course_checkout/id" is private route as checkout. Have to login to inter this route.
+6.BLog page is for 4 questions and answare
+
+# Technologies
+1.React
+2.Html & Css, Bootstrap
+3.server side -- express js
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

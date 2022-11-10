@@ -36,7 +36,7 @@ const Footer = () => {
     </div>
     <hr className="my-10 opacity-10" />
     <div className="text-gray-400">
-      <span className="font-medium">Company Inc</span> ©
+      <span className="font-medium">YourTourGuide</span> ©
     </div>
   </div>
 </footer>

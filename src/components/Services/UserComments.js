@@ -1,12 +1,15 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import CommentCrude from './CommentCrude';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UserComments = () => {
     const comments = useLoaderData();
+    const navigate = useNavigate();
     document.title = "MyReviews";
     function deleteReview(params) {
-        fetch('https://b6a11-service-review-server-side-faisalcode01-pi.vercel.app/review_delete/'+params,{
+        fetch('https://b6a11-service-review-server-side-faisalcode01-faisalcode01.vercel.app/review_delete/'+params,{
             method: 'DELETE',
             headers:{
                 'Content-Type': 'application/json'
@@ -14,7 +17,8 @@ const UserComments = () => {
         })
         .then(res =>res.json())
         .then(data => {
-          alert('deleted successfully');
+            toast('deleted successfully');
+            navigate(`/review/${params}`);
         });
     }
     return (
@@ -27,7 +31,7 @@ const UserComments = () => {
           comments.map(comment => <CommentCrude deleteReview={deleteReview}  key={comment._id} props={comment}></CommentCrude>)
         }
          <div>
-
+         <ToastContainer />
   </div>
         </div>
         </div>

@@ -22,7 +22,7 @@ const AddService = () => {
             'price':price,
           };
 
-        fetch('https://b6a11-service-review-server-side-faisalcode01-pi.vercel.app/service',{
+        fetch('https://b6a11-service-review-server-side-faisalcode01-faisalcode01.vercel.app/service',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'

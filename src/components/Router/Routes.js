@@ -34,13 +34,13 @@ const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 element:<ServiceDetails></ServiceDetails>,
-                loader:({params}) => fetch(`https://b6a11-service-review-server-side-faisalcode01-pi.vercel.app/services/${params.id}`)
+                loader:({params}) => fetch(`https://b6a11-service-review-server-side-faisalcode01-faisalcode01.vercel.app/services/${params.id}`)
 
             },
             {
                 path:'/review/:email',
                 element:<PrivateRoute><UserComments></UserComments></PrivateRoute>,
-                loader:({params}) => fetch(`https://b6a11-service-review-server-side-faisalcode01-pi.vercel.app/user_review/${params.email}`)
+                loader:({params}) => fetch(`https://b6a11-service-review-server-side-faisalcode01-faisalcode01.vercel.app/user_review/${params.email}`)
 
             },
             {

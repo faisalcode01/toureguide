@@ -1,14 +1,11 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
 
 import {FaGoogle, FaGithub} from 'react-icons/fa'
 import { useNavigate, Navigate, Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider';
 
-// import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Login = () => {
 
@@ -68,44 +65,6 @@ const handleLoginSubmit = event =>{
       return <Navigate to="/"></Navigate>
      }
     return (
-    //   <div classNameName='d-flex justify-content-center mt-5  p-5 rounded'>
-        
-    //   <div style={{ width: '30rem' }}>
-        
-    //     <div>
-    //       <div>Login Form</div>
-    //       <div>
-    //         <form onSubmit={handleLoginSubmit}>
-    //           <div classNameName="form-group">
-    //             <label for="exampleInputEmail1">Email address</label>
-    //             <input name="email" type="email" classNameName="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-    //             <small id="emailHelp" classNameName="form-text text-muted">We'll never share your email with anyone else.</small>
-    //           </div>
-    //           <div classNameName="form-group">
-    //             <label for="exampleInputPassword1">Password</label>
-    //             <input name="password" type="password" classNameName="form-control" id="exampleInputPassword1" placeholder="Password"/>
-    //           </div>
-    //           <span classNameName='text-danger'>{ferror}</span>
-    //           <br/>
-    //           <button type="submit" classNameName="btn btn-primary">Submit</button>
-    //         </form>
-    //         <br/>
-    //         <Link to="/register">Already have account</Link>
-    //       </div>
-    //       <hr/>
-    //       <div classNameName='d-flex justify-content-around'>
-    //   <button onClick={handleGooleLogin}  variant='outline-primary'><FaGoogle></FaGoogle> Login with Google</button>
-
-    //   <button onClick={handleGithubLogin} variant='outline-dark'><FaGithub></FaGithub> Login with Github</button>
-
-    // </div>
-    //     </div>
-
-    //   </div>
-
-
-
-    //   </div>
 
 
 <div id="page-container" className="flex flex-col mx-auto w-full min-h-screen bg-gray-100">
@@ -117,8 +76,8 @@ const handleLoginSubmit = event =>{
       <div className="py-6 lg:py-0 w-full md:w-8/12 lg:w-6/12 xl:w-4/12 relative">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold inline-flex items-center mb-1 space-x-3">
-            <svg className="hi-solid hi-cube-transparent inline-block w-8 h-8 text-indigo-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z" clip-rule="evenodd"/></svg>
-            <span>Company</span>
+          <img className="text-indigo-300 opacity-75 hi-outline hi-cube-transparent inline-block w-6 h-6" src="https://cdn-icons-png.flaticon.com/512/5691/5691039.png" alt=""/>
+            <span>YourTourGuide</span>
           </h1>
           <p className="text-gray-500">
             Welcome, please sign in to your dashboard

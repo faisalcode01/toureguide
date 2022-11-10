@@ -8,11 +8,11 @@ http://codelab.faisalaakon.com/
 
 # Feature
 
-1.Home page showing all learning categories.
-2.Courses page has left side nav bar to toggole between categories.
-3.Courses page right side section is for course card depends on category.
-4.art category has no course card
-5."/course_checkout/id" is private route as checkout. Have to login to inter this route.
+1.This is a person's website , who is tour guide
+2.3 place added on the home for tour
+3.All tours are on the all service page
+4.you can add tour (logged in must)
+5.you can add edit delete comment of your owns (logged in must)
 6.BLog page is for 4 questions and answare
 
 # Technologies

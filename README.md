@@ -1,6 +1,6 @@
 # Name
 
-CODELAB-01
+YourTourGuide
 
 # Live Site
 

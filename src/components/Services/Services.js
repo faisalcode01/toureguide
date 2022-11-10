@@ -4,7 +4,7 @@ import ServiceCard from './ServiceCard';
 import { PhotoProvider } from 'react-photo-view';
 
 const Services = () => {
-  document.title = "All Services";
+  
 const [services,setServices] = useState([]);
   useEffect(
     () =>{

@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
+    document.title = "Add Service";
     const navigate = useNavigate();
     const handleSubmit = event =>{
         event.preventDefault();

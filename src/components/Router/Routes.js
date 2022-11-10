@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/review/:email',
-                element:<UserComments></UserComments>,
+                element:<PrivateRoute><UserComments></UserComments></PrivateRoute>,
                 loader:({params}) => fetch(`http://localhost:5000/user_review/${params.email}`)
 
             },

@@ -4,6 +4,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 import Comment from './Comment';
 
 const ServiceDetails = () => {
+  document.title = "Service details";
     const serviceDetails = useLoaderData();
     const [comment,setComment] = useState([]);
     const {user} = useContext(AuthContext);

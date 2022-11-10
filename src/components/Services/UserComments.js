@@ -4,6 +4,7 @@ import CommentCrude from './CommentCrude';
 
 const UserComments = () => {
     const comments = useLoaderData();
+    document.title = "MyReviews";
     function deleteReview(params) {
         fetch('http://localhost:5000/review_delete/'+params,{
             method: 'DELETE',

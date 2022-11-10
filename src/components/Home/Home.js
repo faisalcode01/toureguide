@@ -5,6 +5,7 @@ import Newsletter from '../Newsletter/Newsletter';
 import Services from '../Services/Services';
 
 const Home = () => {
+    document.title = "Home";
     return (
         <div>
             <Banner></Banner>

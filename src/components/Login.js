@@ -128,14 +128,14 @@ const handleLoginSubmit = event =>{
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div className="p-5 lg:p-6 grow w-full">
             <div className="sm:p-5 lg:px-10 lg:py-8">
-              <form onsubmit="return false;" className="space-y-6">
+              <form onSubmit={handleLoginSubmit} className="space-y-6">
                 <div className="space-y-1">
                   <label for="tk-pages-sign-in-email" className="font-medium">Email</label>
-                  <input className="block border border-gray-200 rounded px-5 py-3 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" type="email" id="tk-pages-sign-in-email" placeholder="Enter your email" />
+                  <input className="block border border-gray-200 rounded px-5 py-3 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" type="email" name="email" id="tk-pages-sign-in-email" placeholder="Enter your email" />
                 </div>
                 <div className="space-y-1">
                   <label for="tk-pages-sign-in-password" className="font-medium">Password</label>
-                  <input className="block border border-gray-200 rounded px-5 py-3 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" type="password" id="tk-pages-sign-in-password" placeholder="Enter your password" />
+                  <input className="block border border-gray-200 rounded px-5 py-3 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" type="password" name="password" id="tk-pages-sign-in-password" placeholder="Enter your password" />
                 </div>
                 <div>
                   <button type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">

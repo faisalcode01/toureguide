@@ -10,7 +10,7 @@ const ServiceDetails = () => {
     const {user} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-    const url= "http://localhost:5000/review/" + serviceDetails._id;
+    const url= "https://b6a11-service-review-server-side-faisalcode01-pi.vercel.app/review/" + serviceDetails._id;
 
 
     useEffect(
@@ -38,7 +38,7 @@ const ServiceDetails = () => {
         };
 
 
-        fetch('http://localhost:5000/review',{
+        fetch('https://b6a11-service-review-server-side-faisalcode01-pi.vercel.app/review',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'

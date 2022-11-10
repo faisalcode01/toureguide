@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {  PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ServiceCard = (props) => {
     const {image_url,title,details,rating,_id} = props.props;
@@ -8,7 +10,9 @@ const ServiceCard = (props) => {
         <div>
             <div className="group relative p-4 mb-5">
                 <div className="absolute inset-0 rounded-lg bg-indigo-100 transform transition ease-out duration-150 skew-y-2 group-hover:-rotate-2"></div>
-                <img src={image_url} alt="User Avatar" className="relative rounded-lg shadow" />
+                <PhotoView src={image_url}>
+                    <img src={image_url}  alt="User Avatar" className="relative rounded-lg shadow" />
+                </PhotoView>
             </div>
             <h4 className="text-xl font-semibold mb-1">
                {title}

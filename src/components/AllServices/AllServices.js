@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ServiceCard from '../Services/ServiceCard';
+import { PhotoProvider } from 'react-photo-view';
 
 const AllServices = () => {
     const [services,setServices] = useState([]);
@@ -26,9 +27,11 @@ const AllServices = () => {
       </div>
   
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
+      <PhotoProvider>
         {
             services.map(service => <ServiceCard key={service._id} props={service}></ServiceCard>)
         }
+      </PhotoProvider>
       </div>
     </div>
   </div>

@@ -42,32 +42,40 @@ const AddService = () => {
       }
     return (
 <div className="bg-gray-100">
+
     <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
+
+    <div className="text-center">
+
+<h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+Add Service
+</h2>
+</div>
         <div className="max-w-3xl mx-auto space-y-4 lg:space-y-8">
             <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
                 <form onSubmit={handleSubmit} class="px-4 py-16">
                     <div className="space-y-3">
                         <label for="tk-form-layouts-labels-on-top-email" className="font-medium space-y-3">Title</label>
-                        <input className="block border border-gray-200 rounded px-3 py-2 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" name="title" type="text" id="tk-form-layouts-labels-on-top-email" placeholder="Enter your email.." />
+                        <input className="block border border-gray-200 rounded px-3 py-2 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" name="title" type="text" id="tk-form-layouts-labels-on-top-email" placeholder="title" />
                     </div>
                     <br/>
 
                     <div className="space-y-3">
                         <label for="tk-form-layouts-labels-on-top-password" className="font-medium space-y-3">Image Url</label>
-                        <input className="block border border-gray-200 rounded px-3 py-2 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" name="image_url" type="text" id="tk-form-layouts-labels-on-top-password" placeholder="Enter your password.." />
+                        <input className="block border border-gray-200 rounded px-3 py-2 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" name="image_url" type="text" id="tk-form-layouts-labels-on-top-password" placeholder="image url" />
                     </div>
                     <br/>
 
 
                     <div className="space-y-3">
                         <label for="tk-form-layouts-labels-on-top-password" className="font-medium space-y-3">Description</label>
-                        <textarea className="block border border-gray-200 rounded px-3 py-2 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" name="details" type="text" id="tk-form-layouts-labels-on-top-password" placeholder="Enter your password.." />
+                        <textarea className="block border border-gray-200 rounded px-3 py-2 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" name="details" type="text" id="tk-form-layouts-labels-on-top-password" placeholder="description" />
                     </div>
                     <br/>
 
                     <div className="space-y-3">
                         <label for="tk-form-layouts-labels-on-top-password" className="font-medium space-y-3">Price</label>
-                        <input className="block border border-gray-200 rounded px-3 py-2 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" name="price" type="text" id="tk-form-layouts-labels-on-top-password" placeholder="Enter your password.." />
+                        <input className="block border border-gray-200 rounded px-3 py-2 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" name="price" type="text" id="tk-form-layouts-labels-on-top-password" placeholder="price" />
                     </div>
                     <br/>
                     <button type="submit" className=" inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-3 py-2 leading-5 text-sm rounded border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
